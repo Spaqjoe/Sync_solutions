@@ -58,20 +58,16 @@ To run Luro locally, follow these steps:
 
     # database
     DATABASE_URL=
-
-    # auth
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-    CLERK_SECRET_KEY=
-    NEXT_PUBLIC_CLERK_SIGN_IN_URL="/signin"
-    NEXT_PUBLIC_CLERK_SIGN_UP_URL="/signup"
-    NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_URL="/"
-    NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_URL="/"
     ```
 
 4. Run the development server:
     ```bash
     pnpm run dev
     ```
+
+## 🎨 Brand Assets
+- Update the logo by replacing the files in `public/icons/` (`logo.png`, `logo-dark.png`, `icon.png`).
+- Use the `Logo` component (`@/components`) wherever the brand mark is required to ensure consistent sizing and theming.
 
 ## ☕ Buy Me a Coffee
 If you enjoy using Luro, consider supporting my work!  

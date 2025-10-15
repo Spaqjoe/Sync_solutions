@@ -1,19 +1,17 @@
 "use client";
 
 import { cn } from "@/functions";
-import { useClerk } from "@clerk/nextjs";
 import { ArrowRightIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import Icons from "../global/icons";
+import Logo from "../global/logo";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import Menu from "./menu";
 import MobileMenu from "./mobile-menu";
 
 const Navbar = () => {
-
-    const { user } = useClerk();
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -44,34 +42,24 @@ const Navbar = () => {
                     <div className="flex items-center justify-between w-full sticky mt-[7px] lg:mt-auto mb-auto inset-x-0">
                         <div className="flex items-center flex-1 lg:flex-none pl-1">
                             <Link href="/" className="text-lg font-semibold text-foreground">
-                                <Icons.icon className="w-auto h-5" />
+                                <Logo className="h-6 w-28" aria-hidden />
                             </Link>
                             <div className="items-center hidden ml-4 lg:flex">
                                 <Menu />
                             </div>
                         </div>
                         <div className="items-center flex gap-2 lg:gap-4">
-                            {user ? (
-                                <Button size="sm" variant="white" asChild className="hidden sm:flex">
-                                    <Link href="/app">
-                                        Dashboard
-                                    </Link>
-                                </Button>
-                            ) : (
-                                <>
-                                    <Button size="sm" variant="tertiary" asChild className="hover:translate-y-0 hover:scale-100">
-                                        <Link href="/auth/signin">
-                                            Login
-                                        </Link>
-                                    </Button>
-                                    <Button size="sm" variant="white" asChild className="hidden sm:flex">
-                                        <Link href="/auth/signup">
-                                            Start for free
-                                            <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
-                                        </Link>
-                                    </Button>
-                                </>
-                            )}
+                            <Button size="sm" variant="tertiary" asChild className="hover:translate-y-0 hover:scale-100 sm:hidden">
+                                <Link href="/app">
+                                    Launch app
+                                </Link>
+                            </Button>
+                            <Button size="sm" variant="white" asChild className="hidden sm:flex">
+                                <Link href="/app">
+                                    Launch app
+                                    <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
+                                </Link>
+                            </Button>
                             <Button
                                 size="icon"
                                 variant="ghost"

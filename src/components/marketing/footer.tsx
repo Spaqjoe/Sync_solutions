@@ -2,6 +2,7 @@ import { FOOTER_LINKS } from "@/constants";
 import Link from "next/link";
 import Container from "../global/container";
 import Icons from "../global/icons";
+import Logo from "../global/logo";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import { Particles } from "../ui/particles";
@@ -20,7 +21,7 @@ const Footer = () => {
                     />
                     <div className="flex flex-col items-start max-w-48">
                         <div className="flex items-center gap-2">
-                            <Icons.icon className="w-5 h-5" />
+                            <Logo className="h-6 w-24" aria-hidden />
                             <span className="text-xl font-medium">
                                 Luro
                             </span>

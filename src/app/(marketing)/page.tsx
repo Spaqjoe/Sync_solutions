@@ -1,4 +1,7 @@
-import { Background, Companies, Connect, Container, CTA, Features, Hero, Perks, Pricing, Reviews, Wrapper } from "@/components";
+import { Background, Companies, Connect, Container, CTA, Hero, Perks, Reviews, Wrapper } from "@/components";
+import { Faq1 } from "@/components/marketing/faq1";
+import { Contact7 } from "@/components/marketing/contact7";
+import { Feature3 } from "@/components/marketing/feature3";
 import { Spotlight } from "@/components/ui/spotlight";
 
 const HomePage = () => {
@@ -16,10 +19,11 @@ const HomePage = () => {
                     <Companies />
                 </Container>
                 <Connect />
-                <Features />
+                <Feature3 />
                 <Perks />
-                <Pricing />
                 <Reviews />
+                <Faq1 />
+                <Contact7 />
                 <CTA />
             </Wrapper>
         </Background>

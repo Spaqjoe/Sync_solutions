@@ -15,7 +15,7 @@ type Plan = "monthly" | "yearly";
 
 const Pricing = () => {
     return (
-        <div className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24  w-full relative">
+        <div id="pricing" className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24  w-full relative">
             <Container>
                 <div className="flex flex-col items-center text-center max-w-xl mx-auto">
                     <SectionBadge title="Choose your plan" />

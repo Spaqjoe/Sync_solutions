@@ -3,6 +3,7 @@
 import Container from "../global/container";
 import Icons from "../global/icons";
 import Images from "../global/images";
+import Logo from "../global/logo";
 import MagicCard from "../ui/magic-card";
 import { Ripple } from "../ui/ripple";
 import { SectionBadge } from "../ui/section-bade";
@@ -14,10 +15,10 @@ const Features = () => {
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                     <SectionBadge title="Features" />
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-                        Create content faster <br /> and smarter
+                        Create, content, integrate, and execute faster and smarter
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        Transform your social media strategy with Luro AI&apos;s cutting-edge features, designed to optimize your content creation and engagement like never before.
+                        Transform your business strategy with SyncSolutions cutting-edge features, designed to optimize your business workflow like never before.
                     </p>
                 </div>
             </Container>
@@ -87,7 +88,9 @@ const Features = () => {
                                         <div className="w-full h-48 relative">
                                             <Images.rings className="w-full h-full absolute inset-0" />
                                             <Images.rings className="w-56 h-56 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                                            <Icons.icon className="w-24 h-24 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80" />
+                                            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80">
+                                                <Logo className="h-24 w-24" aria-hidden />
+                                            </span>
                                             <Images.circlePallete className="w-full h-full opacity-30" />
                                         </div>
                                         <div className="w-28 h-28 rounded-full bg-primary/10 blur-3xl -z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>

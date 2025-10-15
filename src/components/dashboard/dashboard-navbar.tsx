@@ -1,7 +1,7 @@
 "use client";
 
 import MobileSidebar from "@/components/dashboard/mobile-sidebar";
-import Icons from "@/components/global/icons";
+import Logo from "@/components/global/logo";
 import { HelpCircleIcon, ZapIcon } from "lucide-react";
 import Link from "next/link";
 import Container from "../global/container";
@@ -13,7 +13,7 @@ const DashboardNavbar = () => {
             <Container className="flex items-center justify-between size-full">
                 <div className="flex items-center">
                     <Link href="/app" className="flex items-center gap-x-2">
-                        <Icons.icon className="w-6" />
+                        <Logo className="h-6 w-28" aria-hidden />
                         <span className="text-lg font-semibold">
                             Luro
                         </span>

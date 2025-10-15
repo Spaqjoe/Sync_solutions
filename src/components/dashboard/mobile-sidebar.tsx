@@ -7,20 +7,13 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { SIDEBAR_LINKS } from "@/constants/links";
-import { useClerk } from "@clerk/nextjs";
-import { LogOutIcon, MenuIcon, SearchIcon } from "lucide-react";
+import { MenuIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const MobileSidebar = () => {
 
-    const { signOut } = useClerk();
-
     const pathname = usePathname();
-
-    const handleLogout = async () => {
-        await signOut();
-    };
 
     return (
         <div className="flex lg:hidden">
@@ -69,15 +62,7 @@ const MobileSidebar = () => {
                         </ul>
 
                         <div className="flex flex-col w-full mt-auto pb-4">
-                            <Button
-                                size="sm"
-                                variant="ghost"
-                                className="w-full justify-start gap-2 px-4"
-                                onClick={handleLogout}
-                            >
-                                <LogOutIcon className="size-4 mr-1.5" />
-                                Logout
-                            </Button>
+                            <span className="text-sm text-muted-foreground px-4">Navigate to any section to explore the app.</span>
                         </div>
                     </div>
                 </SheetContent>

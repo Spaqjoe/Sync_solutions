@@ -5,6 +5,7 @@ import { CalendarRangeIcon, CircleHelp, HashIcon, Newspaper, UsersIcon } from 'l
 import Link from 'next/link';
 import React from 'react';
 import Icons from "../global/icons";
+import Logo from "../global/logo";
 
 interface Props {
     title: string;
@@ -16,14 +17,7 @@ interface Props {
 const Menu = () => {
     return (
         <NavigationMenu>
-            <NavigationMenuList>
-                <NavigationMenuItem>
-                    <Link href="/docs" legacyBehavior passHref>
-                        <NavigationMenuLink className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none">
-                            How it works
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
+            <NavigationMenuList className="gap-5">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground">
                         Features
@@ -36,39 +30,32 @@ const Menu = () => {
                                         href="/"
                                         className="flex flex-col justify-end w-full h-full p-4 no-underline rounded-lg outline-none select-none bg-gradient-to-tr from-accent to-accent/50 focus:shadow-md"
                                     >
-                                        <Icons.icon className="w-6 h-6" />
+                                        <Logo className="h-10 w-36" />
                                         <div className="my-2 text-lg font-normal">
-                                            Luro AI
+                                            SyncSolutions
                                         </div>
                                         <p className="text-sm text-muted-foreground">
-                                            Your ultimate social media management tool
+                                            Your ultimate solution for your business.
                                         </p>
                                     </Link>
                                 </NavigationMenuLink>
                             </li>
-                            <Item title="Content Calendar" href="/features/content-calendar" icon={<CalendarRangeIcon className="w-5 h-5" />}>
-                                Plan and visualize your content strategy.
+                            <Item title="CRM Integration" href="/features/content-calendar" icon={<CalendarRangeIcon className="w-5 h-5" />}>
+                                Plan and visualize your sales strategy.
                             </Item>
-                            <Item title="Hashtag Manager" href="/features/hashtag-manager" icon={<HashIcon className="w-5 h-5" />}>
-                                Research and track trending hashtags.
+                            <Item title="Website Integration" href="/features/hashtag-manager" icon={<HashIcon className="w-5 h-5" />}>
+                                Display your company&apos;s services and strengths visually.
                             </Item>
-                            <Item title="Competitor Analysis" href="/features/competitor-analysis" icon={<UsersIcon className="w-5 h-5" />}>
-                                Monitor and analyze competitor performance.
+                            <Item title="Portal System" href="/features/competitor-analysis" icon={<UsersIcon className="w-5 h-5" />}>
+                                <i>Coming Soon</i>
                             </Item>
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/pricing" legacyBehavior passHref>
+                    <Link href="/#perks" legacyBehavior passHref>
                         <NavigationMenuLink className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none">
-                            Pricing
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/integrations" legacyBehavior passHref>
-                        <NavigationMenuLink className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none">
-                            Integrations
+                            Perks
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
