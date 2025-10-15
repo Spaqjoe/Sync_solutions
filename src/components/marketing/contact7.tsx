@@ -35,7 +35,7 @@ const Contact7 = ({
   chatLink = "Start Chat",
 }: Contact7Props) => {
   return (
-    <section id="contact" className="bg-background py-32 scroll-mt-24">
+    <section className="bg-background py-32 ">
       <div className="flex flex-col items-center text-center max-w-xl mx-auto mb-15">
         <SectionBadge title="Contact Us" />
       </div>

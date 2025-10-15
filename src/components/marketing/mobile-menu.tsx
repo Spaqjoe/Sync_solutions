@@ -1,7 +1,6 @@
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/functions";
 import { useClickOutside } from "@/hooks";
 import { motion } from "framer-motion";
@@ -21,14 +20,6 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
     const variants = {
         open: { opacity: 1, y: 20 },
         closed: { opacity: 0, y: 0 },
-    };
-
-    const handleReachOut = () => {
-        const section = document.getElementById("contact");
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-        setIsOpen(false);
     };
 
     return (
@@ -159,14 +150,6 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
                         </AccordionItem>
                     </Accordion>
                 </ul>
-                <Button
-                    onClick={handleReachOut}
-                    size="lg"
-                    variant="white"
-                    className="mt-6 w-full"
-                >
-                    Reach Out
-                </Button>
             </motion.div>
         </div>
     )

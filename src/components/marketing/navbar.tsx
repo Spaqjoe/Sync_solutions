@@ -27,13 +27,6 @@ const Navbar = () => {
         };
     }, [isOpen]);
 
-    const handleReachOut = () => {
-        const section = document.getElementById("contact");
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-        setIsOpen(false);
-    };
 
     return (
         <div className="relative w-full h-full">
@@ -56,22 +49,16 @@ const Navbar = () => {
                             </div>
                         </div>
                         <div className="items-center flex gap-2 lg:gap-4">
-                            <Button
-                                size="sm"
-                                variant="tertiary"
-                                className="hover:translate-y-0 hover:scale-100 sm:hidden"
-                                onClick={handleReachOut}
-                            >
-                                Reach Out
+                            <Button size="sm" variant="tertiary" asChild className="hover:translate-y-0 hover:scale-100 sm:hidden">
+                                <Link href="/app">
+                                    Launch app
+                                </Link>
                             </Button>
-                            <Button
-                                size="sm"
-                                variant="white"
-                                className="hidden sm:flex"
-                                onClick={handleReachOut}
-                            >
-                                Reach Out
-                                <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
+                            <Button size="sm" variant="white" asChild className="hidden sm:flex">
+                                <Link href="/app">
+                                    Launch app
+                                    <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
+                                </Link>
                             </Button>
                             <Button
                                 size="icon"
