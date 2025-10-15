@@ -1,85 +1,68 @@
-<img src="https://github.com/user-attachments/assets/a1d7ced5-e6fc-41fd-9256-9d73a5f33597" alt="Luro Logo" width="50" height="50">
+<img src="https://github.com/user-attachments/assets/a1d7ced5-e6fc-41fd-9256-9d73a5f33597" alt="Sync Solutions logo" width="50" height="50">
 
-# 🔗 Luro - AI Powered Content Creation Platform(Landing Page)
+# 🔗 Sync Solutions – AI Marketing Landing Page
 
-<!-- <img src="https://github.com/user-attachments/assets/deab03fd-4234-44c3-a6ad-484c4a1a02a1" alt="Linkify Thubmnail"> -->
-<img src="https://github.com/user-attachments/assets/0ff7129e-2f5d-48ae-913d-d4fd1507e613" alt="Luro Thumbnail" style="border-radius: 12px;" width="1280">
+<!-- <img src="https://github.com/user-attachments/assets/deab03fd-4234-44c3-a6ad-484c4a1a02a1" alt="Landing page preview"> -->
+<img src="https://github.com/user-attachments/assets/0ff7129e-2f5d-48ae-913d-d4fd1507e613" alt="Sync Solutions landing page preview" style="border-radius: 12px;" width="1280">
 
-## 🌟 Introduction
+## 🌟 Overview
 
-Luro is an innovative social media marketing platform designed to help you streamline your social media management effortlessly. Built with Next.js, Tailwind CSS, Shadcn UI, Magic UI, Aceternity UI, Prisma, MongoDB, Clerk, React Hook Form, and TypeScript, Luro provides powerful analytics and user-friendly features to enhance your social media marketing experience.
+Sync Solutions is a fully client-owned marketing landing page. There are no third-party authentication, licensing, or hosted dependencies bundled with this template—you can fork it, rename it, and deploy it without requesting access from anyone else. Configure a few environment variables and the site is ready to run under your own branding.
 
-## 🚀 Features
+## 🚀 Core Features
 
-- Real-time performance tracking across platforms
-- Engagement rate calculations and trends
-- Audience growth and demographic insights
-- Custom report generation
-- ROI tracking and analysis
-
-## 🔗 Live Preview
-
-Check out the live demo of Luro here: [Live Preview]()
-
-## 🎥 Watch Demo on YouTube
-
-Check out the tutorial to see how this social media marketing platform was built: [Watch the Tutorial](https://youtu.be/q8mOwYrpAHA?si=XpGy9VIKkaWJmfPL) 💻
+- Hero, features, perks, testimonials, and pricing sections
+- Dashboard-themed UI components built with shadcn/ui primitives
+- Responsive layout optimized for Tailwind CSS
+- Motion, parallax, and particle effects powered by Framer Motion, GSAP, and Magic UI
+- TypeScript-first codebase with linting and formatting presets
 
 ## 💻 Tech Stack
 
-- Next.js
-- Tailwind CSS
-- Shadcn UI
-- Magic UI
-- Aceternity UI
-- Prisma
-- MongoDB
-- Clerk
-- Recharts
-- Framer Motion
+- Next.js 14 (App Router)
+- Tailwind CSS + shadcn/ui + Magic UI
+- Framer Motion & GSAP
+- Prisma (MongoDB ready schema)
+- React Hook Form & Zod
 
-## 🛠️ Installation
+## 🛠️ Getting Started
 
-To run Luro locally, follow these steps:
-
-1. Clone the repository:
+1. **Clone**
    ```bash
    git clone https://github.com/Spaqjoe/Sync_solutions.git
+   cd Sync_solutions
    ```
-2. Install dependencies:
+2. **Install**
    ```bash
    pnpm install
    ```
-3. Set up environment variables in a `.env` file:
-
+3. **Configure**
+   Create a `.env` file at the project root and set at minimum:
    ```
-   # app
-   NEXT_PUBLIC_APP_NAME=
-   NEXT_PUBLIC_APP_DOMAIN=
-
-   # database
-   DATABASE_URL=
+   NEXT_PUBLIC_APP_NAME=Sync Solutions
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   NEXT_PUBLIC_APP_DOMAIN=localhost
+   NEXT_PUBLIC_AUTHOR_NAME=Your Name
+   DATABASE_URL="mongodb+srv://USER:PASS@HOST/db?retryWrites=true&w=majority"
    ```
+   > These defaults ensure the site builds without relying on any external accounts. Adjust or remove database usage depending on your deployment needs.
 
-4. Run the development server:
+4. **Run**
    ```bash
-   pnpm run dev
+   pnpm dev
    ```
+   The dev server runs on `http://localhost:3000`.
 
-## 🎨 Brand Assets
+## 🎨 Customisation Tips
 
-- Update the logo by replacing the files in `public/icons/` (`logo.png`, `logo-dark.png`, `icon.png`).
-- Use the `Logo` component (`@/components`) wherever the brand mark is required to ensure consistent sizing and theming.
+- Replace the logos in `public/icons/` and update favicons through `components.json` if desired.
+- Update `NEXT_PUBLIC_APP_NAME` to change branding copy across the UI.
+- Tailor marketing copy under `src/components/marketing` and dashboard copy in `src/components/dashboard`.
 
-## ☕ Buy Me a Coffee
+## 📦 Deployment
 
-If you enjoy using Luro, consider supporting my work!  
-[Buy Me a Coffee ☕](https://buymeacoffee.com/shreyas29)
+Deploy to any platform that supports Next.js (Vercel, Netlify, Render, etc.). Because the project no longer references gated resources, you can connect your repository and deploy immediately.
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-# Sync_solutions
+This project remains under the MIT License. See [LICENSE](LICENSE) for details.

@@ -5,6 +5,8 @@ import Container from "../global/container";
 import { SectionBadge } from "../ui/section-bade";
 
 const Perks = () => {
+    const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
+
     return (
         <div id="perks" className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24 w-full">
             <Container>
@@ -14,7 +16,7 @@ const Perks = () => {
                         Discover the benefits
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        Explore the powerful features and advantages that Luro offer to help you grow your Company presence
+                        Explore the powerful features and advantages that {appName} offers to help you grow your company presence.
                     </p>
                 </div>
             </Container>

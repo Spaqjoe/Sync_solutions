@@ -8,6 +8,8 @@ import { Button } from "../ui/button";
 import { Particles } from "../ui/particles";
 
 const Footer = () => {
+    const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
+
     return (
         <footer className="w-full py-10 relative">
             <Container>
@@ -23,7 +25,7 @@ const Footer = () => {
                         <div className="flex items-center gap-2">
                             <Logo className="h-6 w-24" aria-hidden />
                             <span className="text-xl font-medium">
-                                Luro
+                                {appName}
                             </span>
                         </div>
                         <p className="text-base max-w mt-4">
@@ -58,7 +60,7 @@ const Footer = () => {
             <Container>
                 <Wrapper className="pt-10 flex items-center justify-between relative">
                     <p className="text-sm text-secondary-foreground">
-                        &copy; {new Date().getFullYear()} Luro. All rights reserved.
+                        &copy; {new Date().getFullYear()} {appName}. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4">
                         <Link href="#" className="p-1">

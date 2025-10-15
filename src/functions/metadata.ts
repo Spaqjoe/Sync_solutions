@@ -16,55 +16,60 @@ interface MetadataProps {
     modifiedTime?: string;
 }
 
-export const generateMetadata = ({
-    title = `${process.env.NEXT_PUBLIC_APP_NAME} - Smart Social Media Marketing Platform`,
-    description = "Streamline your social media management with AI-powered analytics, scheduling, and content optimization. Get real-time insights, automate posts, and boost engagement across all platforms",
-    image = "/thumbnail.png",
-    icons = [
-        {
-            rel: "icon",
-            type: "image/png",
-            sizes: "32x32",
-            url: "/icons/favicon-32x32.png"
-        },
-        {
-            rel: "icon",
-            type: "image/png",
-            sizes: "16x16",
-            url: "/icons/favicon-16x16.png"
-        },
-    ],
-    noIndex = false,
-    keywords = [
-        "AI content creation",
-        "content automation",
-        "AI writing assistant",
-        "content generation",
-        "artificial intelligence",
-        "content marketing"
-    ],
-    author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
-    twitterHandle = "@yourtwitterhandle",
-    type = "website",
-    locale = "en_US",
-    alternates = {},
-    publishedTime,
-    modifiedTime
-}: MetadataProps = {}): Metadata => {
-    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://luro-ai.vercel.app");
+export const generateMetadata = (props: MetadataProps = {}): Metadata => {
+    const {
+        title,
+        description = "Streamline your social media management with AI-powered analytics, scheduling, and content optimization. Get real-time insights, automate posts, and boost engagement across all platforms",
+        image = "/thumbnail.png",
+        icons = [
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "32x32",
+                url: "/icons/favicon-32x32.png"
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "16x16",
+                url: "/icons/favicon-16x16.png"
+            },
+        ],
+        noIndex = false,
+        keywords = [
+            "AI content creation",
+            "content automation",
+            "AI writing assistant",
+            "content generation",
+            "artificial intelligence",
+            "content marketing"
+        ],
+        author,
+        twitterHandle = "@yourtwitterhandle",
+        type = "website",
+        locale = "en_US",
+        alternates = {},
+        publishedTime,
+        modifiedTime
+    } = props;
+
+    const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
+    const resolvedAuthor = author ?? process.env.NEXT_PUBLIC_AUTHOR_NAME ?? appName;
+    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000");
+    const resolvedTitle = title ?? `${appName} - Smart Social Media Marketing Platform`;
     const imageUrl = image ? new URL(image, metadataBase).toString() : null;
 
     return {
         metadataBase,
         title: {
-            template: `%s | ${process.env.NEXT_PUBLIC_APP_NAME}`,
-            default: title
+            template: `%s | ${appName}`,
+            default: resolvedTitle
         },
         description,
         keywords,
-        authors: [{ name: author }],
-        creator: author,
-        publisher: process.env.NEXT_PUBLIC_APP_NAME,
+        authors: [{ name: resolvedAuthor }],
+        creator: resolvedAuthor,
+        publisher: appName,
         formatDetection: {
             email: false,
             address: false,
@@ -75,8 +80,8 @@ export const generateMetadata = ({
         // OpenGraph
         openGraph: {
             type,
-            siteName: process.env.NEXT_PUBLIC_APP_NAME,
-            title,
+            siteName: appName,
+            title: resolvedTitle,
             description,
             ...(imageUrl && {
                 images: [{
@@ -97,7 +102,7 @@ export const generateMetadata = ({
             card: imageUrl ? "summary_large_image" : "summary",
             site: twitterHandle,
             creator: twitterHandle,
-            title,
+            title: resolvedTitle,
             description,
             ...(imageUrl && { images: [imageUrl] })
         },

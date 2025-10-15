@@ -8,6 +8,8 @@ import Container from "../global/container";
 import { Button } from "../ui/button";
 
 const DashboardNavbar = () => {
+    const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
+
     return (
         <header id="dashboard-navbar" className="fixed top-0 inset-x-0 w-full h-16 bg-background/40 backdrop-blur-md border-b border-border/50 px-4 z-50">
             <Container className="flex items-center justify-between size-full">
@@ -15,7 +17,7 @@ const DashboardNavbar = () => {
                     <Link href="/app" className="flex items-center gap-x-2">
                         <Logo className="h-6 w-28" aria-hidden />
                         <span className="text-lg font-semibold">
-                            Luro
+                            {appName}
                         </span>
                     </Link>
                 </div>
