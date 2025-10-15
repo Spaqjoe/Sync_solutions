@@ -11,7 +11,7 @@ const Footer = () => {
     const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
 
     return (
-        <footer className="w-full py-10 relative">
+        <footer id="footer" className="w-full py-10 relative scroll-mt-32">
             <Container>
                 <Wrapper className="relative flex flex-col md:flex-row justify-between pb-40 overflow-hidden footer">
                     <Particles

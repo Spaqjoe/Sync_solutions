@@ -7,14 +7,27 @@ import React from 'react';
 import Icons from "../global/icons";
 import Logo from "../global/logo";
 
-interface Props {
+interface ItemProps {
     title: string;
     href: string;
     children: React.ReactNode;
     icon: React.ReactNode;
 }
 
-const Menu = () => {
+interface MenuProps {
+    onNavigate?: (targetId: string) => void;
+}
+
+const Menu = ({ onNavigate }: MenuProps) => {
+    const handleAnchorClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+        if (!onNavigate) {
+            return;
+        }
+
+        event.preventDefault();
+        onNavigate(targetId);
+    };
+
     return (
         <NavigationMenu>
             <NavigationMenuList className="gap-5">
@@ -53,8 +66,11 @@ const Menu = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/#perks" legacyBehavior passHref>
-                        <NavigationMenuLink className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none">
+                    <Link href="#perks" legacyBehavior passHref>
+                        <NavigationMenuLink
+                            className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none"
+                            onClick={(event) => handleAnchorClick(event, "perks")}
+                        >
                             Perks
                         </NavigationMenuLink>
                     </Link>
@@ -79,7 +95,7 @@ const Menu = () => {
     )
 };
 
-const Item = ({ title, href, children, icon, ...props }: Props) => {
+const Item = ({ title, href, children, icon, ...props }: ItemProps) => {
     return (
         <li>
             <NavigationMenuLink asChild>

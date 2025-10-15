@@ -8,7 +8,7 @@ const Perks = () => {
     const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
 
     return (
-        <div id="perks" className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24 w-full">
+        <div id="perks" className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24 w-full scroll-mt-32">
             <Container>
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                     <SectionBadge title="Perks" />

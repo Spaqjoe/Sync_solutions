@@ -15,6 +15,11 @@ const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
+    const scrollToSection = (targetId: string) => {
+        const section = document.getElementById(targetId);
+        section?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
@@ -45,20 +50,31 @@ const Navbar = () => {
                                 <Logo className="h-6 w-28" aria-hidden />
                             </Link>
                             <div className="items-center hidden ml-4 lg:flex">
-                                <Menu />
+                                <Menu onNavigate={scrollToSection} />
                             </div>
                         </div>
                         <div className="items-center flex gap-2 lg:gap-4">
                             <Button size="sm" variant="tertiary" asChild className="hover:translate-y-0 hover:scale-100 sm:hidden">
-                                <Link href="/app">
-                                    Launch app
-                                </Link>
+                                <a
+                                    href="#contact"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        scrollToSection("contact");
+                                    }}
+                                >
+                                    Reach out
+                                </a>
                             </Button>
                             <Button size="sm" variant="white" asChild className="hidden sm:flex">
-                                <Link href="/app">
-                                    Launch app
-                                    <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
-                                </Link>
+                                <a
+                                    href="#contact"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        scrollToSection("contact");
+                                    }}
+                                >
+                                    Reach out
+                                </a>
                             </Button>
                             <Button
                                 size="icon"
@@ -70,7 +86,7 @@ const Navbar = () => {
                             </Button>
                         </div>
                     </div>
-                    <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+                    <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} onNavigate={scrollToSection} />
                 </Wrapper>
             </header>
 
