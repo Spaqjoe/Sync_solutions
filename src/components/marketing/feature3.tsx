@@ -1,6 +1,7 @@
 "use client"
 
 import {
+  BoldIcon,
   Code,
   GitBranch,
   List,
@@ -27,12 +28,11 @@ const Feature3 = () => {
       <div className="container mt-20">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
           <h1 className="mb-6 text-pretty text-4xl font-semibold lg:text-5xl">
-            This is where your feature goes
+            Why Choose SyncSolutions.
           </h1>
 
-          <div className="mt-10 grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-            <Card>
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[minmax(200px,1fr)]">
+            <Card className="h-full w-full lg:col-span-2">
               <GlareHover
                 glareColor="#723eed"
                 glareOpacity={0.3}
@@ -45,21 +45,21 @@ const Feature3 = () => {
                   <Code className="size-4" strokeWidth={1} />
                 </CardHeader>
                 <CardContent className="text-left">
-                  <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
+                  <h2 className="mb-1 text-lg font-semibold">Web Development</h2>
                   <p className="text-muted-foreground leading-snug">
-                    Lorem ipsum dolor sit amet consectetur.
+                    Display your company's services and strengths visually.
                   </p>
                 </CardContent>
                 <CardFooter className="justify-end pb-0 pr-0">
                   <img
                     className="h-40 w-full rounded-tl-md object-cover object-center"
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                    src="/images/web-dev.png"
                     alt="placeholder"
                   />
                 </CardFooter>
               </GlareHover>
             </Card>
-            <Card>
+            <Card className="h-full w-full">
               <GlareHover
                 glareColor="#723eed"
                 glareOpacity={0.3}
@@ -72,21 +72,21 @@ const Feature3 = () => {
                   <Play className="size-4" strokeWidth={1} />
                 </CardHeader>
                 <CardContent className="text-left">
-                  <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
+                  <h2 className="mb-1 text-lg font-semibold">AI and Automations</h2>
                   <p className="text-muted-foreground leading-snug">
-                    Lorem ipsum dolor sit amet consectetur.
+                    Seamless automated workflow to increase productivity.
                   </p>
                 </CardContent>
                 <CardFooter className="justify-end pb-0 pr-0">
                   <img
                     className="h-40 w-full rounded-tl-md object-cover object-center"
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                    src="/images/ai.png"
                     alt="placeholder"
                   />
                 </CardFooter>
               </GlareHover>
             </Card>
-            <Card>
+            <Card className="h-full w-full">
               <GlareHover
                 glareColor="#723eed"
                 glareOpacity={0.3}
@@ -99,21 +99,21 @@ const Feature3 = () => {
                   <GitBranch className="size-4" strokeWidth={1} />
                 </CardHeader>
                 <CardContent className="text-left">
-                  <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
+                  <h2 className="mb-1 text-lg font-semibold">CRM Setup</h2>
                   <p className="text-muted-foreground leading-snug">
-                    Lorem ipsum dolor sit amet consectetur.
+                    Plan and visualize your sales strategy.
                   </p>
                 </CardContent>
                 <CardFooter className="justify-end pb-0 pr-0">
                   <img
                     className="h-40 w-full rounded-tl-md object-cover object-center"
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                    src="/images/CRM.jpg"
                     alt="placeholder"
                   />
                 </CardFooter>
               </GlareHover>
             </Card>
-            <Card>
+            <Card className="h-full w-full lg:col-span-2">
               <GlareHover
                 glareColor="#723eed"
                 glareOpacity={0.3}
@@ -126,69 +126,15 @@ const Feature3 = () => {
                   <List className="size-4" strokeWidth={1} />
                 </CardHeader>
                 <CardContent className="text-left">
-                  <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
+                  <h2 className="mb-1 text-lg font-semibold">Lead Generation</h2>
                   <p className="text-muted-foreground leading-snug">
-                    Lorem ipsum dolor sit amet consectetur.
+                    Scale your business up to <b>5X</b> more.
                   </p>
                 </CardContent>
                 <CardFooter className="justify-end pb-0 pr-0">
                   <img
                     className="h-40 w-full rounded-tl-md object-cover object-center"
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-                    alt="placeholder"
-                  />
-                </CardFooter>
-              </GlareHover>
-            </Card>
-            <Card>
-              <GlareHover
-                glareColor="#723eed"
-                glareOpacity={0.3}
-                glareAngle={-30}
-                glareSize={300}
-                transitionDuration={1250}
-                playOnce={false}
-              >
-                <CardHeader className="pb-1">
-                  <WandSparkles className="size-4" strokeWidth={1} />
-                </CardHeader>
-                <CardContent className="text-left">
-                  <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                  <p className="text-muted-foreground leading-snug">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </p>
-                </CardContent>
-                <CardFooter className="justify-end pb-0 pr-0">
-                  <img
-                    className="h-40 w-full rounded-tl-md object-cover object-center"
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-                    alt="placeholder"
-                  />
-                </CardFooter>
-              </GlareHover>
-            </Card>
-            <Card>
-              <GlareHover
-                glareColor="#723eed"
-                glareOpacity={0.3}
-                glareAngle={-30}
-                glareSize={300}
-                transitionDuration={1250}
-                playOnce={false}
-              >
-                <CardHeader className="pb-1">
-                  <Sparkles className="size-4" strokeWidth={1} />
-                </CardHeader>
-                <CardContent className="text-left">
-                  <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                  <p className="text-muted-foreground leading-snug">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </p>
-                </CardContent>
-                <CardFooter className="justify-end pb-0 pr-0">
-                  <img
-                    className="h-40 w-full rounded-tl-md object-cover object-center"
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                    src="/images/lms.png"
                     alt="placeholder"
                   />
                 </CardFooter>
