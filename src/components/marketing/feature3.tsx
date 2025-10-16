@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import { Code, GitBranch, List, Play, type LucideIcon } from "lucide-react";
 
 import {
@@ -101,11 +102,15 @@ const Feature3 = () => {
                       </p>
                     </CardContent>
                     <CardFooter className="mt-auto h-32 sm:h-40 lg:h-44 overflow-hidden justify-end pb-0 pr-0">
-                      <img
-                        className="h-full w-full object-cover object-center"
-                        src={image}
-                        alt="placeholder"
-                      />
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={image}
+                          alt={title}
+                          fill
+                          className="object-cover object-center"
+                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        />
+                      </div>
                     </CardFooter>
                   </GlareHover>
                 </Card>
