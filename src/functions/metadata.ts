@@ -19,7 +19,7 @@ interface MetadataProps {
 export const generateMetadata = (props: MetadataProps = {}): Metadata => {
     const {
         title,
-        description = "Streamline your social media management with AI-powered analytics, scheduling, and content optimization. Get real-time insights, automate posts, and boost engagement across all platforms",
+        description = "Up-scale, Integrate and Optimize your business strategy. Grow your company and brand with ease.",
         image = "/thumbnail.png",
         icons = [
             {
@@ -37,12 +37,11 @@ export const generateMetadata = (props: MetadataProps = {}): Metadata => {
         ],
         noIndex = false,
         keywords = [
-            "AI content creation",
-            "content automation",
-            "AI writing assistant",
-            "content generation",
-            "artificial intelligence",
-            "content marketing"
+            "AI and Automations",
+            "CRM integration",
+            "graphic design",
+            "lead managment",
+            "web development",
         ],
         author,
         twitterHandle = "@yourtwitterhandle",
@@ -56,7 +55,7 @@ export const generateMetadata = (props: MetadataProps = {}): Metadata => {
     const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
     const resolvedAuthor = author ?? process.env.NEXT_PUBLIC_AUTHOR_NAME ?? appName;
     const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000");
-    const resolvedTitle = title ?? `${appName} - Smart Social Media Marketing Platform`;
+    const resolvedTitle = title ?? `${appName} - Smart Business Scaling System`;
     const imageUrl = image ? new URL(image, metadataBase).toString() : null;
 
     return {

@@ -106,8 +106,9 @@ const Feature3 = () => {
                         <Image
                           src={image}
                           alt={title}
-                          fill
-                          className="object-cover object-center"
+                          width={640}
+                          height={360}
+                          className="size-full object-cover object-center"
                           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                         />
                       </div>
