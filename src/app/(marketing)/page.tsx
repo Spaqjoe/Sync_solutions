@@ -2,7 +2,7 @@ import { Background, Companies, Connect, Container, CTA, Hero, Perks, Reviews, W
 import { Faq1 } from "@/components/marketing/faq1";
 import { Contact7 } from "@/components/marketing/contact7";
 import { Spotlight } from "@/components/ui/spotlight";
-import { BentoGridSecondDemo } from "@/components/marketing/features2";
+import { BentoGridSecondDemo } from "@/components/marketing/bentogridseconddemo";
 
 const HomePage = () => {
     return (
