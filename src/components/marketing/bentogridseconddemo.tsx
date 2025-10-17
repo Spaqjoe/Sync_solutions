@@ -28,14 +28,21 @@ export function BentoGridSecondDemo() {
 
     );
 }
-const Skeleton = ({ image, alt }: { image: string; alt: string }) => (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-100 dark:bg-black">
+const Skeleton = ({
+    image,
+    alt,
+    sizes = "(min-width: 1280px) 33vw, (min-width: 768px) 45vw, 100vw",
+    className = "h-44 sm:h-52 lg:h-56",
+}: { image: string; alt: string; sizes?: string; className?: string }) => (
+    <div
+        className={`relative w-full overflow-hidden rounded-xl bg-neutral-900/60 ${className}`}
+    >
         <Image
             src={image}
             alt={alt}
             fill
             className="object-cover"
-            sizes="(min-width: 768px) 33vw, 100vw"
+            sizes={sizes}
         />
     </div>
 );
@@ -44,31 +51,59 @@ const items = [
     {
         title: "Web Development",
         description: "Display your company&apos;s services and strengths visually.",
-        header: <Skeleton image="/images/web.png" alt="Web application preview" />,
+        header: (
+            <Skeleton
+                image="/images/web.png"
+                alt="Web application preview"
+                sizes="(min-width: 1280px) 44vw, (min-width: 1024px) 50vw, (min-width: 768px) 70vw, 100vw"
+                className="h-40"
+            />
+        ),
         className: "md:col-span-2",
-        icon: <IconCode className="h-4 w-4 text-neutral-500" />,
+        icon: <IconCode className="h-5 w-5 text-white/80" />,
     },
 
     {
         title: "AI and Automation",
         description: "Seamless automations that saves time and increases productivity.",
-        header: <Skeleton image="/images/n8n.png" alt="Automation workflow diagram" />,
+        header: (
+            <Skeleton
+                image="/images/n8n.png"
+                alt="Automation workflow diagram"
+                sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 24vw, (min-width: 768px) 45vw, 100vw"
+                className="h-40"
+            />
+        ),
         className: "md:col-span-1",
-        icon: <IconGitFork className="h-4 w-4 text-neutral-500" />,
+        icon: <IconGitFork className="h-5 w-5 text-white/80" />,
     },
     {
         title: "Lead Generation",
         description: "Get the best lead magnet tailored for you.",
-        header: <Skeleton image="/images/lms.png" alt="User interface mockup" />,
+        header: (
+            <Skeleton
+                image="/images/lms.png"
+                alt="User interface mockup"
+                sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 24vw, (min-width: 768px) 45vw, 100vw"
+                className="h-40"
+            />
+        ),
         className: "md:col-span-1",
-        icon: <IconRobot className="h-4 w-4 text-neutral-500" />,
+        icon: <IconRobot className="h-5 w-5 text-white/80" />,
     },
     {
         title: "CRM Integration",
         description:
             "Plan and visualize your sales strategy.",
-        header: <Skeleton image="/images/crm.jpg" alt="Analytics dashboard" />,
+        header: (
+            <Skeleton
+                image="/images/crm.jpg"
+                alt="Analytics dashboard"
+                sizes="(min-width: 1280px) 44vw, (min-width: 1024px) 50vw, (min-width: 768px) 70vw, 100vw"
+                className="h-40"
+            />
+        ),
         className: "md:col-span-2",
-        icon: <IconChartLine className="h-4 w-4 text-neutral-500" />,
+        icon: <IconChartLine className="h-5 w-5 text-white/80" />,
     },
 ];
