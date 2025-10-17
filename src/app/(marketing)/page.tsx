@@ -1,8 +1,8 @@
 import { Background, Companies, Connect, Container, CTA, Hero, Perks, Reviews, Wrapper } from "@/components";
 import { Faq1 } from "@/components/marketing/faq1";
 import { Contact7 } from "@/components/marketing/contact7";
-import { Feature3 } from "@/components/marketing/feature3";
 import { Spotlight } from "@/components/ui/spotlight";
+import { BentoGridSecondDemo } from "@/components/marketing/features2";
 
 const HomePage = () => {
     return (
@@ -15,16 +15,12 @@ const HomePage = () => {
                     />
                     <Hero />
                 </Container>
-                <Container className="py-8 lg:py-20">
-                    <Companies />
-                </Container>
                 <Connect />
-                <Feature3 />
+                <BentoGridSecondDemo />
                 <Perks />
-                <Reviews />
                 <Faq1 />
-                <Contact7 />
                 <CTA />
+                <Contact7 />
             </Wrapper>
         </Background>
     )

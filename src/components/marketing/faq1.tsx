@@ -49,19 +49,7 @@ const Faq1 = ({
       question: "How should I organize my FAQ?",
       answer:
         "You should organize your FAQ in a logical manner, grouping related questions together and ordering them from most basic to more advanced topics.",
-    },
-    {
-      id: "faq-6",
-      question: "How long should FAQ answers be?",
-      answer:
-        "FAQ answers should be concise and to the point, typically a few sentences or a short paragraph is sufficient for most questions.",
-    },
-    {
-      id: "faq-7",
-      question: "Should I include links in my FAQ?",
-      answer:
-        "Yes, including links to more detailed information or related resources can be very helpful for users who want to learn more about a particular topic.",
-    },
+    }
   ],
 }: Faq1Props) => {
   return (

@@ -30,67 +30,7 @@ const Menu = ({ onNavigate }: MenuProps) => {
 
     return (
         <NavigationMenu>
-            <NavigationMenuList className="gap-5">
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground">
-                        Features
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid rounded-3xl gap-3 p-4 md:w-[400px] lg:w-[500px] xl:w-[550px] lg:grid-cols-[.75fr_1fr]">
-                            <li className="row-span-3">
-                                <NavigationMenuLink asChild>
-                                    <Link
-                                        href="/"
-                                        className="flex flex-col justify-end w-full h-full p-4 no-underline rounded-lg outline-none select-none bg-gradient-to-tr from-accent to-accent/50 focus:shadow-md"
-                                    >
-                                        <Logo className="h-10 w-36" />
-                                        <div className="my-2 text-lg font-normal">
-                                            SyncSolutions
-                                        </div>
-                                        <p className="text-sm text-muted-foreground">
-                                            Your ultimate solution for your business.
-                                        </p>
-                                    </Link>
-                                </NavigationMenuLink>
-                            </li>
-                            <Item title="CRM Integration" href="/features/content-calendar" icon={<CalendarRangeIcon className="w-5 h-5" />}>
-                                Plan and visualize your sales strategy.
-                            </Item>
-                            <Item title="Website Integration" href="/features/hashtag-manager" icon={<HashIcon className="w-5 h-5" />}>
-                                Display your company&apos;s services and strengths visually.
-                            </Item>
-                            <Item title="Portal System" href="/features/competitor-analysis" icon={<UsersIcon className="w-5 h-5" />}>
-                                <i>Coming Soon</i>
-                            </Item>
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="#perks" legacyBehavior passHref>
-                        <NavigationMenuLink
-                            className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none"
-                            onClick={(event) => handleAnchorClick(event, "perks")}
-                        >
-                            Perks
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground">
-                        Resources
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] xl:w-[500px]">
-                            <Item title="Blog" href="/resources/blog" icon={<Newspaper className="w-5 h-5" />}>
-                                Read our latest articles and updates.
-                            </Item>
-                            <Item title="Support" href="/resources/support" icon={<CircleHelp className="w-5 h-5" />}>
-                                Get help with any issues you may have.
-                            </Item>
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-            </NavigationMenuList>
+
         </NavigationMenu>
     )
 };

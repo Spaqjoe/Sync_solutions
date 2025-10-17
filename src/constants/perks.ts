@@ -15,22 +15,7 @@ export const PERKS = [
     },
     {
         icon: LifeBuoyIcon,
-        title: "24/7 Support",
+        title: "Onging Support",
         description: "Our team is available around the clock to assist with any issues or questions."
-    },
-    {
-        icon: PaletteIcon,
-        title: "Customizable Solutions",
-        description: "Tailor the tools and features to fit your unique needs."
-    },
-    {
-        icon: ShieldCheckIcon,
-        title: "Secure and Reliable",
-        description: "Trust our platforms to keep your data safe and ensure consistent performance."
-    },
-    {
-        icon: WaypointsIcon,
-        title: "Seamless Integration",
-        description: "Easily integrate with your existing systems and our tools."
     },
 ];

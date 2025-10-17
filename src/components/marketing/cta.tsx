@@ -23,11 +23,6 @@ const CTA = () => {
                                     Get Started
                                 </Link>
                             </Button>
-                            <Button asChild size="lg" variant="secondary" className="w-full md:w-max">
-                                <Link href="">
-                                    Learn More
-                                </Link>
-                            </Button>
                         </div>
                     </div>
                     <RetroGrid />
