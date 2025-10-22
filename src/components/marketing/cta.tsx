@@ -1,10 +1,13 @@
-import Link from "next/link";
+"use client";
+
 import Container from "../global/container";
 import { Button } from "../ui/button";
 import { Particles } from "../ui/particles";
 import RetroGrid from "../ui/retro-grid";
+import { useContactModal } from "../global/contact-modal-context";
 
 const CTA = () => {
+    const { openModal } = useContactModal();
     return (
         <div className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24 w-full relative">
             <Container>
@@ -18,10 +21,8 @@ const CTA = () => {
                             Ready to get started? Sign up now and start your journey with us. We are here to help you grow.
                         </p>
                         <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 mt-6">
-                            <Button asChild size="lg" className="w-full md:w-max">
-                                <Link href="">
-                                    Get Started
-                                </Link>
+                            <Button size="lg" className="w-full md:w-max" onClick={openModal}>
+                                Get Started
                             </Button>
                         </div>
                     </div>

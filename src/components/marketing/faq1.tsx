@@ -53,7 +53,7 @@ const Faq1 = ({
   ],
 }: Faq1Props) => {
   return (
-    <section className="py-32">
+    <section id="faqs" className="py-32 scroll-mt-32">
       <div className="flex flex-col items-center text-center max-w-xl mx-auto ">
         <SectionBadge title="FAQs" />
       </div>

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Box, CalendarClock, Captions, CircleHelp, CopyCheck, FileText, Gem, Layers3, LineChart, Newspaper, Sparkles, UserCog } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
+import { useContactModal } from "../global/contact-modal-context";
 
 interface Props {
     isOpen: boolean;
@@ -17,6 +18,7 @@ interface Props {
 const MobileMenu = ({ isOpen, setIsOpen, onNavigate }: Props) => {
 
     const ref = useClickOutside(() => setIsOpen(false));
+    const { openModal } = useContactModal();
 
     const variants = {
         open: { opacity: 1, y: 20 },
@@ -94,6 +96,19 @@ const MobileMenu = ({ isOpen, setIsOpen, onNavigate }: Props) => {
                         className="w-full px-4 py-2 text-lg hover:text-muted-foreground font-normal transition transform rounded-md cursor-pointer text-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80"
                     >
                         <a
+                            href="#offers"
+                            className="flex items-center w-full text-start"
+                            onClick={(event) => handleNavigate(event, "offers")}
+                        >
+                            <Box className="w-4 h-4 mr-2" />
+                            Offers
+                        </a>
+                    </li>
+                    <li
+                        onClick={() => setIsOpen(false)}
+                        className="w-full px-4 py-2 text-lg hover:text-muted-foreground font-normal transition transform rounded-md cursor-pointer text-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80"
+                    >
+                        <a
                             href="#perks"
                             className="flex items-center w-full text-start"
                             onClick={(event) => handleNavigate(event, "perks")}
@@ -107,13 +122,29 @@ const MobileMenu = ({ isOpen, setIsOpen, onNavigate }: Props) => {
                         className="w-full px-4 py-2 text-lg hover:text-muted-foreground font-normal transition transform rounded-md cursor-pointer text-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80"
                     >
                         <a
-                            href="#contact"
+                            href="#faqs"
                             className="flex items-center w-full text-start"
-                            onClick={(event) => handleNavigate(event, "contact")}
+                            onClick={(event) => handleNavigate(event, "faqs")}
+                        >
+                            <CircleHelp className="w-4 h-4 mr-2" />
+                            FAQs
+                        </a>
+                    </li>
+                    <li
+                        onClick={() => setIsOpen(false)}
+                        className="w-full px-4 py-2 text-lg hover:text-muted-foreground font-normal transition transform rounded-md cursor-pointer text-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80"
+                    >
+                        <button
+                            type="button"
+                            className="flex w-full items-center text-start"
+                            onClick={(event) => {
+                                event.preventDefault();
+                                openModal();
+                            }}
                         >
                             <Gem className="w-4 h-4 mr-2" />
                             Contact us
-                        </a>
+                        </button>
                     </li>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1" className="border-transparent">

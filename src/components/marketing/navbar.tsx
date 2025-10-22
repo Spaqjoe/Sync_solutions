@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/functions";
-import { ArrowRightIcon, XIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import Icons from "../global/icons";
@@ -10,10 +10,12 @@ import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import Menu from "./menu";
 import MobileMenu from "./mobile-menu";
+import { useContactModal } from "../global/contact-modal-context";
 
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const { openModal } = useContactModal();
 
     const scrollToSection = (targetId: string) => {
         const section = document.getElementById(targetId);
@@ -45,36 +47,30 @@ const Navbar = () => {
             >
                 <Wrapper className="backdrop-blur-lg rounded-xl lg:rounded-2xl border border-[rgba(124,124,124,0.2)] px- md:px-2 flex items-center justify-start">
                     <div className="flex items-center justify-between w-full sticky mt-[7px] lg:mt-auto mb-auto inset-x-0">
-                        <div className="flex items-center flex-1 lg:flex-none pl-1">
+                        <div className="flex items-center pl-1 lg:flex-none">
                             <Link href="/" className="text-lg font-semibold text-foreground">
                                 <Logo className="h-6 w-28" aria-hidden />
                             </Link>
-                            <div className="items-center hidden ml-4 lg:flex">
-                                <Menu onNavigate={scrollToSection} />
-                            </div>
                         </div>
-                        <div className="items-center flex gap-2 lg:gap-4">
-                            <Button size="sm" variant="tertiary" asChild className="hover:translate-y-0 hover:scale-100 sm:hidden">
-                                <a
-                                    href="#contact"
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        scrollToSection("contact");
-                                    }}
-                                >
-                                    Reach out
-                                </a>
+                        <div className="hidden lg:flex items-center justify-center flex-1">
+                            <Menu onNavigate={scrollToSection} />
+                        </div>
+                        <div className="items-center flex gap-2 lg:gap-4 lg:flex-none">
+                            <Button
+                                size="sm"
+                                variant="tertiary"
+                                onClick={openModal}
+                                className="hover:translate-y-0 hover:scale-100 sm:hidden"
+                            >
+                                Get in touch
                             </Button>
-                            <Button size="sm" variant="white" asChild className="hidden sm:flex">
-                                <a
-                                    href="#contact"
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        scrollToSection("contact");
-                                    }}
-                                >
-                                    Reach out
-                                </a>
+                            <Button
+                                size="sm"
+                                variant="white"
+                                onClick={openModal}
+                                className="hidden sm:flex"
+                            >
+                                Get in touch
                             </Button>
                             <Button
                                 size="icon"

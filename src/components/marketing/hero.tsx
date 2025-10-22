@@ -1,12 +1,13 @@
-import { ArrowRightIcon } from "lucide-react";
-import Link from "next/link";
+"use client";
+
 import { BlurText } from "../ui/blur-text";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "../global/container";
+import { useContactModal } from "../global/contact-modal-context";
 
 const Hero = () => {
+    const { openModal } = useContactModal();
     return (
         <section id="hero" className="flex flex-col items-center text-center w-full max-w-5xl my-24 mx-auto z-40 relative scroll-mt-32">
             <Container delay={0.0}>
@@ -34,10 +35,8 @@ const Hero = () => {
             </Container>
             <Container delay={0.2}>
                 <div className="flex items-center justify-center md:gap-x-6 mt-8">
-                    <Button asChild size="lg">
-                        <Link href="/app">
-                            Take a Step
-                        </Link>
+                    <Button size="lg" onClick={openModal}>
+                        Take a Step
                     </Button>
                 </div>
             </Container>

@@ -9,23 +9,37 @@ import {
     IconGitFork,
     IconRobot,
 } from "@tabler/icons-react";
+import { SectionBadge } from "../ui/section-bade";
+import Container from "../global/container";
 
 export function BentoGridSecondDemo() {
+    const appName = process.env.NEXT_PUBLIC_APP_NAME || "Sync Solutions";
     return (
-
-        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-            {items.map((item, i) => (
-                <BentoGridItem
-                    key={i}
-                    title={item.title}
-                    description={item.description}
-                    header={item.header}
-                    className={item.className}
-                    icon={item.icon}
-                />
-            ))}
-        </BentoGrid>
-
+        <section id="offers" className="py-16 md:py-20 lg:py-24 scroll-mt-32">
+            <Container>
+                <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                    <SectionBadge title="Offers" />
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
+                        Create, integrate, and execute faster and smarter
+                    </h2>
+                    <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
+                        Transform your business strategy with {appName}&apos;s tailored offers, designed to optimize your workflow like never before.
+                    </p>
+                </div>
+            </Container>
+            <BentoGrid className="max-w-6xl mx-auto mt-20">
+                {items.map((item, i) => (
+                    <BentoGridItem
+                        key={i}
+                        title={item.title}
+                        description={item.description}
+                        header={item.header}
+                        className={item.className}
+                        icon={item.icon}
+                    />
+                ))}
+            </BentoGrid>
+        </section>
     );
 }
 const Skeleton = ({

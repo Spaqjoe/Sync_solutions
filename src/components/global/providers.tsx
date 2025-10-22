@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react"
+import { ContactModalProvider } from "./contact-modal-context";
 
 interface Props {
     children: React.ReactNode;
@@ -6,9 +9,9 @@ interface Props {
 
 const Providers = ({ children }: Props) => {
     return (
-        <>
+        <ContactModalProvider>
             {children}
-        </>
+        </ContactModalProvider>
     );
 };
 
