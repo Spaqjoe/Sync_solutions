@@ -7,7 +7,7 @@ import { BentoGridSecondDemo } from "@/components/marketing/bentogridseconddemo"
 const HomePage = () => {
     return (
         <Background>
-            <Wrapper className="py-20 relative">
+            <Wrapper className="py-12 relative">
                 <Container className="relative">
                     <Spotlight
                         className="-top-40 left-0 md:left-60 md:-top-20"

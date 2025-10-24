@@ -60,7 +60,7 @@ export const ContactModalProvider = ({ children }: ContactModalProviderProps) =>
                     }
                 }}
             >
-                <DialogContent className="w-[min(100vw-2rem,640px)] max-w-2xl gap-6 border border-foreground/10 bg-background/95 p-6 sm:p-8 backdrop-blur-md">
+                <DialogContent className="w-[min(100vw-2rem,640px)] max-w-2xl gap-6 border border-foreground/10 bg-background/95 p-6 sm:p-8 backdrop-blur-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-h-[calc(100vh-2rem)] overflow-y-auto">
                     <DialogHeader>
                         <p className="text-sm font-medium text-primary">Get in Touch</p>
                         <DialogTitle className="text-2xl font-semibold tracking-tight">
@@ -103,12 +103,12 @@ export const ContactModalProvider = ({ children }: ContactModalProviderProps) =>
                                     </SelectTrigger>
                                     <SelectContent className="max-h-[280px]">
                                         <div className="p-1">
-                                        <Input
-                                            value={countryQuery}
-                                            onChange={(event) => setCountryQuery(event.target.value)}
-                                            placeholder="Search country..."
-                                            className="h-9"
-                                        />
+                                            <Input
+                                                value={countryQuery}
+                                                onChange={(event) => setCountryQuery(event.target.value)}
+                                                placeholder="Search country..."
+                                                className="h-9"
+                                            />
                                         </div>
                                         {filteredCountries.length ? (
                                             filteredCountries.map((country) => (
